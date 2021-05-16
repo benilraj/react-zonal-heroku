@@ -11,6 +11,7 @@ function Zone() {
 
     const httpUrl = "http://localhost:8000/";
     const [data, setData] = useState([]);
+    const [formClass, setFormClass] = useState([]);
     const token = JSON.parse(localStorage.getItem("token"));
     const validToken = token.token_type + " " + token.token;
   
@@ -48,14 +49,14 @@ function Zone() {
             data.sort((a, b) => a.zone_no - b.zone_no)
             console.log(data);
             setData(data);
+            setFormClass("container d-none");
           });
       }, []);
 
     
-      let formClass="container d-none";
+
       const showForm=()=>{
-       formClass="container";
-        alert()
+       setFormClass("container");
       }
   return (
     <>
