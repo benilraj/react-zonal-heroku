@@ -8,7 +8,7 @@ function ViewEligibilityPerforma(props) {
 
    const studentId = props.location.state.key;
    console.log(studentId);
-  const httpUrl = "http://localhost:8000/";
+  const httpUrl = "http://65.2.26.216/zonal/public/";
   const token = JSON.parse(localStorage.getItem("token"));
   const validToken = token.token_type + " " + token.token;
   const requestOptions = {
@@ -16,7 +16,7 @@ function ViewEligibilityPerforma(props) {
     headers: { "Content-Type": "application/json", Authorization: validToken },
   };
   useEffect(() => {
-    fetch("http://localhost:8000/college/eligibilityPerforma/"+studentId, requestOptions)
+    fetch(httpUrl+"college/eligibilityPerforma/"+studentId, requestOptions)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -25,7 +25,7 @@ function ViewEligibilityPerforma(props) {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:8000/college/qrcode/"+studentId, requestOptions)
+    fetch(httpUrl+"college/qrcode/"+studentId, requestOptions)
       .then((response) => response.text())
       .then((data) => {
         console.log(data);

@@ -13,7 +13,7 @@ import {Link } from "react-router-dom";
 
 function EventRegistrationDetails() { 
 
-  const httpUrl = "http://localhost:8000/";
+  const httpUrl = "http://65.2.26.216/zonal/public/";
   const [data, setData] = useState([]);
   const token = JSON.parse(localStorage.getItem("token"));
   const validToken = token.token_type + " " + token.token;

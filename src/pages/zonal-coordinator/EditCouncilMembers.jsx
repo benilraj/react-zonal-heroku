@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function EditCouncilMembers() {
-  const httpUrl = "http://localhost:8000/";
+  const httpUrl = "http://65.2.26.216/zonal/public/";
   const token = JSON.parse(localStorage.getItem("token"));
   const validToken = token.token_type + " " + token.token;
 

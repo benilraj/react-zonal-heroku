@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 
 function Results() {
   const [result, setResultData] = useState([]);
-  const httpUrl = "http://localhost:8000/";
+  const httpUrl = "http://65.2.26.216/zonal/public/";
   const token = JSON.parse(localStorage.getItem("token"));
   const validToken = token.token_type + " " + token.token;
   const requestOptions = {
@@ -31,8 +31,7 @@ function Results() {
   const changeFilter = (e) => {
     console.log(e.target.value);
     filterDomain=e.target.value;
-    
-    setFilterData(null);
+    setFilterData([]);
     fetch(httpUrl + "admin/filterContent/" + e.target.value, requestOptions)
       .then((response) => response.json())
       .then((result) => {
@@ -42,15 +41,19 @@ function Results() {
       });
   };
 
+
+
   const changeResults = (e) => {
   
     e.preventDefault();
+    
     const key = e.target.zoneValue.value;
      fetch(httpUrl + "admin/filterResult/" + key, requestOptions)
       .then((response) => response.json())
       .then((result) => {
        // result.sort((a, b) => a.zone_no - b.zone_no);
         console.log(result);
+        console.log(result.length);
         setFilterData(result);
       }); 
   };
@@ -115,13 +118,11 @@ function Results() {
                     <th>4th Place</th>
                   </thead>
                   <tbody>
-                    {result===null?
-                  <span className="text-danger h1">NO DATA</span>
-                :console.log(result.length)
-                }
+                    {console.log("result 0")}
+                    {console.log(result)}
                     {result.map((r, index) => {
                       return (
-                        <tr>
+                        <tr>                        
                           <td>{index + 1}</td>
                           <td>
                             {r.zone_no}--{r.zone_name}

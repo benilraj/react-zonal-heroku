@@ -12,7 +12,7 @@ function EditGame(props) {
     const game = props.location.state;
     console.log(game);
   const [data, setData] = useState([]);
-  const httpUrl = "http://localhost:8000/";
+  const httpUrl = "http://65.2.26.216/zonal/public/";
   const token = JSON.parse(localStorage.getItem("token"));
   const validToken = token.token_type + " " + token.token;
   const requestOptions = {

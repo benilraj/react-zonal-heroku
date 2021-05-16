@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 
 function Zone() { 
 
-    const httpUrl = "http://localhost:8000/";
+    const httpUrl = "http://65.2.26.216/zonal/public/";
     const [data, setData] = useState([]);
     const [formClass, setFormClass] = useState([]);
     const token = JSON.parse(localStorage.getItem("token"));

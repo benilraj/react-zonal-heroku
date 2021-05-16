@@ -10,6 +10,7 @@ import { useState, useEffect, Component } from "react";
 
 function CollegeIndex() {
   const [data, setData] = useState([]);
+  const httpUrl = "http://65.2.26.216/zonal/public/";
   const token = JSON.parse(localStorage.getItem("token"));
   const validToken = token.token_type + " " + token.token;
   const requestOptions = {
@@ -18,7 +19,7 @@ function CollegeIndex() {
   };
 
   useEffect(() => {
-    fetch("http://localhost:8000/college/events", requestOptions)
+    fetch(httpUrl+"college/events", requestOptions)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

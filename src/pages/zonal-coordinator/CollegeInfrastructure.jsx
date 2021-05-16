@@ -12,7 +12,7 @@ import Navigation from "./Navigation";
 function CollegeInfrastructure(props) { 
     const collegeId = props.location.state.id;
     const collegeName=props.location.state.name;
-    const httpUrl = "http://localhost:8000/";
+    const httpUrl = "http://65.2.26.216/zonal/public/";
     const [data, setData] = useState([]);
   
     const token = JSON.parse(localStorage.getItem("token"));

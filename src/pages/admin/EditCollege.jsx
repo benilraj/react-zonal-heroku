@@ -12,7 +12,7 @@ function EditCollege(props) {
   const prop = props.location.state;
   console.log(prop);
   const [data, setData] = useState([]);
-  const httpUrl = "http://localhost:8000/";
+  const httpUrl = "http://65.2.26.216/zonal/public/";
   const token = JSON.parse(localStorage.getItem("token"));
   const validToken = token.token_type + " " + token.token;
   const requestOptions = {
@@ -24,7 +24,7 @@ function EditCollege(props) {
     fetch(httpUrl + "admin/allZones", requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        //data.sort((a, b) => a.zone_no - b.zone_no);
+        data.sort((a, b) => a.zone_no - b.zone_no);
         console.log(data);
         setData(data);
       });

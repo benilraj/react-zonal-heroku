@@ -14,7 +14,7 @@ function AssignZonalcoordinator(props) {
   const zoneNo = props.location.state.zone_no;
   const zoneName = props.location.state.zone_name;
   let history = useHistory();
-  const httpUrl = "http://localhost:8000/";
+  const httpUrl = "http://65.2.26.216/zonal/public/";
   const token = JSON.parse(localStorage.getItem("token"));
   const validToken = token.token_type + " " + token.token;
 

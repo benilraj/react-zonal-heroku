@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 /* import {Link } from "react-router-dom";  */
 
 function EditProfileAdmin() {
-  const httpUrl = "http://localhost:8000/";
+  const httpUrl = "http://65.2.26.216/zonal/public/";
   const token = JSON.parse(localStorage.getItem("token"));
   const validToken = token.token_type + " " + token.token;
   const { register, handleSubmit, watch, errors } = useForm();

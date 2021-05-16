@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 
 function Login() {
   let history = useHistory();
+  const httpUrl = "http://65.2.26.216/zonal/public/";
   const { register, handleSubmit, watch, errors } = useForm();
   const onSubmit = (data) => {
     const requestOptions = {
@@ -12,7 +13,7 @@ function Login() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     };
-    fetch("http://localhost:8000/api/login", requestOptions)
+    fetch(httpUrl+"api/login", requestOptions)
       .then((response) => response.json())
       .then((data) => {
         localStorage.setItem("token", JSON.stringify(data));

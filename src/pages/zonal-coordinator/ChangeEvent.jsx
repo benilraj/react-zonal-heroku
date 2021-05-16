@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 function ChangeEvent(props) {
   const event=props.location.state;
-  const httpUrl = "http://localhost:8000/";
+  const httpUrl = "http://65.2.26.216/zonal/public/";
   const [data, setData] = useState([]);
   let history = useHistory();
   const token = JSON.parse(localStorage.getItem("token"));

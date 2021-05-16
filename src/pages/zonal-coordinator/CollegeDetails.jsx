@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function CollegeDetails() {
-  const httpUrl = "http://localhost:8000/";
+  const httpUrl = "http://65.2.26.216/zonal/public/";
   const [data, setData] = useState([]);
 
   const token = JSON.parse(localStorage.getItem("token"));
